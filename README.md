@@ -6,7 +6,7 @@ uses `no_std`.
 ## example
 
 ```rust
-use rpg::Die;
+use tiny_die::Die;
 
 fn main() {
     let dee_six: Die = Die::new(6);
