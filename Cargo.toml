@@ -1,0 +1,12 @@
+[package]
+name = "tiny_die"
+version = "0.1.0"
+authors = ["Alec Burgdorf <aeburgd@gmail.com>"]
+edition = "2018"
+publish = ["tiny-die", "tiny_die"]
+readme = "README.md"
+license = "MIT OR Apache-2.0"
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rand = "0.7.3"
