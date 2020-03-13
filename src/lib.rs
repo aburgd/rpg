@@ -69,6 +69,7 @@ impl Die {
     /// Plus 1 because that's how `gen_range()` works baybee.
     ///
     /// # Example
+    ///
     /// ```rust
     /// use tiny_die::Die;
     /// let dee_ten = Die::new(10);
