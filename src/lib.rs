@@ -50,10 +50,10 @@ pub struct Coin {
 }
 
 impl Coin {
-    /// Returns a coin with 2 sides. 
+    /// Returns a coin with 2 sides.
     /// # Arguments
     /// None.
-    /// 
+    ///
     /// # Example
     /// ```rust
     /// use tiny_die::Coin;
@@ -134,5 +134,11 @@ impl Die {
 impl fmt::Display for Die {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(f, "{}", self.roll())
+    }
+}
+
+impl fmt::Display for Coin {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "{}", self.flip())
     }
 }
