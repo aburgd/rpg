@@ -25,6 +25,57 @@ mod tests {
         let dee_six = Die::default();
         assert_eq!(dee_six.sides, 6);
     }
+
+    use crate::Coin;
+    #[test]
+    fn non_zero_flip() {
+        let coin = Coin::new();
+        assert_ne!(coin.flip(), 0);
+    }
+    #[test]
+    fn less_equal_two_flip() {
+        let coin = Coin::new();
+        assert!(coin.flip() <= 2);
+    }
+    #[test]
+    fn greater_equal_one_flip() {
+        let coin = Coin::new();
+        assert!(coin.flip() <= 1);
+    }
+}
+
+/// Contains the `Coin` struct and its functions.
+pub struct Coin {
+    pub sides: u8,
+}
+
+impl Coin {
+    /// Returns a coin with 2 sides. 
+    /// # Arguments
+    /// None.
+    /// 
+    /// # Example
+    /// ```rust
+    /// use tiny_die::Coin;
+    /// let coin = Coin::new();
+    /// ```
+    pub fn new() -> Self {
+        Self { sides: 2 }
+    }
+
+    /// Return a number between 1 and number of sides plus 1.
+    /// Plus 1 because that's how `gen_range()` works baybee.
+    ///
+    /// # Example
+    ///
+    /// ```rust
+    /// use tiny_die::Coin;
+    /// let coin = Coin::new();
+    /// let flipped = coin.flip();
+    /// ```
+    pub fn flip(&self) -> u8 {
+        rand::thread_rng().gen_range(1, self.sides + 1)
+    }
 }
 
 /// Contains the `Die` struct and its functions.
