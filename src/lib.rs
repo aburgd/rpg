@@ -53,7 +53,7 @@ impl Die {
     /// let rolled = dee_ten.roll();
     /// ```
     pub fn roll(&self) -> u8 {
-        rand::thread_rng().gen_range(1, self.sides + 1)
+        rand::thread_rng().gen_range(1..=self.sides)
     }
 }
 
